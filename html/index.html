@@ -2,11 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>To do list</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/custom.js"></script>
+    <title>List thingy</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../js/custom.js" defer></script>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-
+<div class="heading">Ethan's To Do List</div>
+<div class="todocontainer">
+    <input class="myinput" type="text" placeholder="Add Thing">
+    <button class="btn" onClick="additem()"><i class="icon far fa-plus-square"></i></button>
+    <button class="btn" onClick="clearlist()"><i class='icon far fa-trash-alt'></i></button>
+</div>
+    <div class="container">
+    </div>
 </body>
 </html>
