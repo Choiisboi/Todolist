@@ -34,6 +34,7 @@ function additem(){
 
 }
 
+
 function clearlist(){
     $(".row").remove();
 }
