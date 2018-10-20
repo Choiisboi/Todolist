@@ -1,6 +1,4 @@
-
-
-function newToDo(){
+function newItem(){
     let item = document.getElementById("input").value;
     let ul = document.getElementById("list");
     let li = document.createElement("li");
@@ -10,8 +8,8 @@ function newToDo(){
     li.onclick = removeItem;
 }
 
-document.body.onkeydown= function(e){
-    if (e.keycode == 13){
+document.body.onkeydown = function(e){
+    if (e.keycode === 13){
         newItem();
     }
 };
