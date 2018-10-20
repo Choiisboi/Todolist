@@ -1,4 +1,4 @@
-function newItem(){
+function newItem() {
     let item = document.getElementById("input").value;
     let ul = document.getElementById("list");
     let li = document.createElement("li");
@@ -8,12 +8,12 @@ function newItem(){
     li.onclick = removeItem;
 }
 
-document.body.onkeydown = function(e){
-    if (e.keycode === 13){
+document.body.onkeydown = function(e) {
+    if (e.keyCode === 13) {
         newItem();
     }
 };
 
-function removeItem(e){
+function removeItem(e) {
     e.target.parentElement.removeChild(e.target);
 }
