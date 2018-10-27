@@ -1,19 +1,39 @@
-function newItem() {
-    let item = document.getElementById("input").value;
-    let ul = document.getElementById("list");
-    let li = document.createElement("li");
-    li.appendChild(document.createTextNode("- " + item));
-    ul.appendChild(li);
-    document.getElementById("input").value = "";
-    li.onclick = removeItem;
+
+
+$(".myinput").on("keydown", function(event){
+    if(event.which === 13){
+        additem();
+    }
+});
+
+$(".container").sortable({
+    handle: ".handle"
+});
+
+function additem(){
+    let myname = $(".myinput").val();
+
+    $(".container").append("<div contenteditable='true' class='row'>"+
+        "<i class='handle fas fa-circle'></i>"+
+        "<span>"+ myname +"</span>" +
+        "<i class='complete fas fa-check-square'></i>"+
+    "</div>");
+
+    $(".myinput").val("");
+
+    $(".complete").click(function(){
+
+        $(this).parent().animate({
+            opacity: 0,
+            left: "+=200"
+        }, 800, function(){
+            //when animation is done
+            $(this).remove();
+        });
+    });
+
 }
 
-document.body.onkeydown = function(e) {
-    if (e.keyCode === 13) {
-        newItem();
-    }
-};
-
-function removeItem(e) {
-    e.target.parentElement.removeChild(e.target);
+function clearlist(){
+    $(".row").remove();
 }
